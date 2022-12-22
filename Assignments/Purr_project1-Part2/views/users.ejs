@@ -1,1 +1,6 @@
-<h1>All Users:</h1>
+<h1>Our Users</h1>
+
+<% for (let i=0; i < users.length; i++) { %>
+  <p class="user-name"><%=  users[i].name %></p>
+  <p>$ <%= users[i].gender %></p>
+<% } %>

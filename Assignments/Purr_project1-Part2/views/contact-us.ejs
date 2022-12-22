@@ -1,0 +1,17 @@
+<% if (locals.success) { %>
+  <div class="success">
+    <p>User Added Successfully!</p>
+  </div>
+<% } %>
+
+<p>Please fill in the form and click the submit button.</p>
+
+<p>We will contact you asap.  Thank you!</p>
+
+<form action="/contact-us" method="post">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name">
+  <label for="gender">Gender</label>
+  <input type="text" id="gender" name="gender">
+  <input type="submit" value="Submit">
+</form>
