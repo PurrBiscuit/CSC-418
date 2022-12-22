@@ -6,3 +6,35 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navBar {
+  background-color: rgb(225, 224, 224);
+  border: solid rgb(201, 201, 201);
+  border-radius: .5rem;
+  vertical-align: middle;
+}
+
+.navBar li {
+  color: rgb(130, 128, 128);
+  margin-left: 2rem;
+}
+
+.navBar li a {
+  color: rgb(130, 128, 128);
+  display: inline;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navBar li h1 {
+  display: inline;
+}
+
+.navBar ul {
+  align-items: center;
+  display: inline-flex;
+  height: auto;
+  padding: 0;
+  list-style-type: none;
+}
