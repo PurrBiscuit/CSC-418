@@ -11,6 +11,11 @@ label {
   font-weight: bold;
 }
 
+footer {
+  color: rgb(130, 128, 128);
+  text-align: center;
+}
+
 .nav-bar {
   background-color: rgb(225, 224, 224);
   border: solid rgb(201, 201, 201);
