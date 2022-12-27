@@ -1,3 +1,5 @@
+<!-- Hello! -->
+
 <% if (locals.success) { %>
   <div class="success" id="message">
     <p>User Added Successfully!</p>
@@ -8,7 +10,7 @@
 
 <p>We will contact you asap.  Thank you!</p>
 
-<form action="/contact-us" method="post">
+<form class="contact-us" action="/contact-us" method="post">
   <label for="name">Name</label>
   <input class="required" type="text" id="name" name="name" onkeyup="toggleSubmit()">
   <label for="gender">Gender</label>
