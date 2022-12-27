@@ -60,14 +60,26 @@ form.contact-us {
   background-color: rgb(168, 255, 168);
   border: solid green;
   border-radius: .5rem;
-  color: green;
-  font-size: 16px;
   margin: 1rem auto 0 auto;
   padding: .4rem 0;
   text-align: center;
   width: 20rem;
 }
 
+p.success-text {
+  color: green;
+  font-size: 16px;
+  margin: 1.6rem 0;
+}
+
 .user-name {
   font-weight: bold;
+}
+
+label#gender {
+  margin-left: 1.5rem;
+}
+
+input#contact-submit {
+  margin-left: 1.5rem;
 }
