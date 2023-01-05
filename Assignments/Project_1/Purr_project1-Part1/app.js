@@ -18,8 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
   res.render('index', {
-    name: 'Tom',
-    title: 'Date and Time Displayer'
+    name: 'Tom'
   })
 })
 
