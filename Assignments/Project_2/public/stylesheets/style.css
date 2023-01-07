@@ -56,11 +56,27 @@ form.contact-us {
   list-style-type: none;
 }
 
+.error {
+  background-color: rgb(249, 149, 149);
+  border: solid red;
+  border-radius: .5rem;
+  margin: 1rem auto 1rem auto;
+  padding: .4rem 0;
+  text-align: center;
+  width: 40rem;
+}
+
+p.error-text {
+  color: red;
+  font-size: 16px;
+  margin: 1.6rem 0;
+}
+
 .success {
   background-color: rgb(168, 255, 168);
   border: solid green;
   border-radius: .5rem;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 1rem auto;
   padding: .4rem 0;
   text-align: center;
   width: 20rem;

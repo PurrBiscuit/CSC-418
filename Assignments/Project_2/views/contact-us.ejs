@@ -1,6 +1,12 @@
-<% if (locals.success) { %>
-  <div class="success" id="message">
-    <p class="success-text">User Added Successfully!</p>
+<% if (locals.message) { %>
+  <div class="<%= locals.messageClass || 'success' %>" id="message">
+      <% if (Array.isArray(locals.message)) { %>
+        <% locals.message.forEach(msg => { %>
+          <p class="<%= locals.messageClass || 'success' %>-text"><%= msg %></p>
+        <% }) %>
+      <% } else { %>
+        <p class="<%= locals.messageClass || 'success' %>-text"><%= locals.message %></p>
+      <% } %>
   </div>
 <% } %>
 

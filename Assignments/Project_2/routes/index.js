@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const users = require('../data/users')
+const contact = require('../lib/model/contact')
+const { formatErrors } = require('../lib/utils')
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -12,14 +13,24 @@ router.get('/contact-us', (req, res) => {
   res.render('contact-us')
 })
 
-router.post('/contact-us', (req, res) => {
-  const { gender, name } = req.body
+router.post('/contact-us', (req, res, nameMaxLengthMessage) => {
+  contact.create(req.body)
+    .then(() => {
+      res.render('contact-us', {
+        message: 'User Added Successfully!'
+      })
+    })
+    .catch(error => {
+      console.log(`Error saving user: ${error.message}`)
 
-  users.push({ name, gender })
-
-  res.render('contact-us', {
-    success: true
-  })
+      if (error.name === 'ValidationError')
+        res.render('contact-us', {
+          message: formatErrors(error.errors),
+          messageClass: 'error'
+        })
+      else
+        next(error)
+    })
 })
 
 module.exports = router
