@@ -13,7 +13,7 @@ router.get('/contact-us', (req, res) => {
   res.render('contact-us')
 })
 
-router.post('/contact-us', (req, res, nameMaxLengthMessage) => {
+router.post('/contact-us', (req, res, next) => {
   contact.create(req.body)
     .then(() => {
       res.render('contact-us', {
