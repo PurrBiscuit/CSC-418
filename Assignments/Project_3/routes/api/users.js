@@ -46,12 +46,19 @@ router.get('/:userId', (req, res, next) => {
     .catch(handleError(next))
 })
 
+// create a new user
+router.post('/', (req, res, next) => {
+  contacts.create(req.body)
+    .then(user =>
+      res.json(user)
+    )
+    .catch(handleError(next))
+})
+
 // update a user user
 router.put('/:userId', (req, res, next) => {
   const { userId } = req.params
   const { gender, name } = req.body
-
-  console.log('body is ->', req.body)
 
   contacts.findByIdAndUpdate(userId, {
     $set: { gender, name }
