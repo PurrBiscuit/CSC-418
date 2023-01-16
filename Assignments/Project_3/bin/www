@@ -87,9 +87,10 @@ const onListening = () => {
  */
 
 mongoose.connect(process.env.MONGODB_URL, {
+  family: 4,
+  serverSelectionTimeoutMS: 2000,
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 2000
+  useUnifiedTopology: true
 })
   .then(() => {
     console.log('Successfully connected to MongoDB using Mongoose!')
