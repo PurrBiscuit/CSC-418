@@ -1,0 +1,101 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+label {
+  font-weight: bold;
+}
+
+footer {
+  color: rgb(130, 128, 128);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+form.contact-us {
+  margin-top: 2rem;
+}
+
+.nav-bar-custom {
+  background-color: rgb(225, 224, 224);
+  border: solid rgb(201, 201, 201);
+  border-radius: .5rem;
+  margin-bottom: 2rem;
+  vertical-align: middle;
+}
+
+.nav-bar-custom li {
+  color: rgb(130, 128, 128);
+  margin-left: 2rem;
+}
+
+.nav-bar-custom li a {
+  color: rgb(130, 128, 128);
+  display: inline;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-bar-custom li h1 {
+  display: inline;
+  font-size: 30px;
+}
+
+.nav-bar-custom ul {
+  align-items: center;
+  display: inline-flex;
+  height: auto;
+  margin: .6rem 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.error {
+  background-color: rgb(249, 149, 149);
+  border: solid red;
+  border-radius: .5rem;
+  margin: 1rem auto 1rem auto;
+  padding: .4rem 0;
+  text-align: center;
+  width: 40rem;
+}
+
+p.error-text {
+  color: red;
+  font-size: 16px;
+  margin: 1.6rem 0;
+}
+
+.success {
+  background-color: rgb(168, 255, 168);
+  border: solid green;
+  border-radius: .5rem;
+  margin: 1rem auto 1rem auto;
+  padding: .4rem 0;
+  text-align: center;
+  width: 20rem;
+}
+
+p.success-text {
+  color: green;
+  font-size: 16px;
+  margin: 1.6rem 0;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+label#gender {
+  margin-left: 1.5rem;
+}
+
+input#contact-submit {
+  margin-left: 1.5rem;
+}
