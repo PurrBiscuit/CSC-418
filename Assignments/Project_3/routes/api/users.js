@@ -23,6 +23,17 @@ const handleError = next => error => {
   next(error)
 }
 
+// delete a single user by id
+router.delete('/:userId', (req, res, next) => {
+  const { userId } = req.params
+
+  contacts.findByIdAndRemove(userId)
+    .then(() =>
+      res.status(204).end()
+    )
+    .catch(handleError(next))
+})
+
 // return all users
 router.get('/', (req, res, next) => {
   contacts.find().lean()
