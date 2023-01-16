@@ -16,28 +16,58 @@ const contentTypeCheck = (req, res, next) => {
 
 router.use(contentTypeCheck)
 
+const handleError = next => error => {
+  if (error.name === 'ValidationError')
+    return next(createError(400, error.message))
+
+  next(error)
+}
+
 // return all users
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
   contacts.find().lean()
-    .then(records => {
-      res.json(records)
+    .then(users => {
+      res.json(users)
     })
+    .catch(handleError(next))
 })
 
 // return a single user based on id
-router.get('/:userId', (req, res) => {
-  contacts.findById(req.params.userId).lean()
-    .then((record) => {
-      if (!record) {
-        const error = createError(404)
-        return res.status(error.status).send(error)
-      }
+router.get('/:userId', (req, res, next) => {
+  const { userId } = req.params
 
-      res.json(record)
+  contacts.findById(userId).lean()
+    .then((user) => {
+      if (!user)
+        return next(createError(404, `User not found with id -> ${userId}`))
+
+      res.json(user)
     })
-    .catch(error => {
-      res.status(500).send(createError(error.message))
+    .catch(handleError(next))
+})
+
+// update a user user
+router.put('/:userId', (req, res, next) => {
+  const { userId } = req.params
+  const { gender, name } = req.body
+
+  console.log('body is ->', req.body)
+
+  contacts.findByIdAndUpdate(userId, {
+    $set: { gender, name }
+  },
+  {
+    new: true,
+    runValidators: true
+  }
+  )
+    .then(user => {
+      if (!user)
+        return next(createError(404, `User not found with id -> ${userId}`))
+
+      res.json(user)
     })
+    .catch(handleError(next))
 })
 
 module.exports = router
